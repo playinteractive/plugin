@@ -1,0 +1,31 @@
+{
+    "name": "stage/plugin",
+    "type": "library",
+    "description": "Plugin loader for Stage Framework.",
+    "homepage": "https://stage.work",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Salvador Baqués",
+            "email": "salva@email5.com",
+            "homepage": "https://playinteractive.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/playinteractive/plugin/issues",
+        "source": "https://github.com/playinteractive/plugin"
+    },
+    "keywords": [
+        "plugins", "php", "loader", "stage framework"
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stage\\": "src/"
+        }
+    }
+}
