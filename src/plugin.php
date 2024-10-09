@@ -6,6 +6,13 @@
  * @package   https://github.com/playinteractive
  */
 
+/*
+╔══════════════════════════════════════════════════════════════════════
+║  STAGE ~ PLUGINS ≡ plugin.php
+╠══════════════════════════════════════════════════════════════════════
+║
+*/
+
 namespace Stage;
 
 use Stage\Tool;
