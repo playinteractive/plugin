@@ -58,7 +58,7 @@ class Plugin
 
     public function include($file)
     {
-        $file = Tool::path([$_ENV['PLUGIN'], $this->namespace, $file]);
+        $file = is_array($file) ? Tool::path(array_merge([$_ENV['PLUGIN'], $this->namespace], $file)) : Tool::path([$_ENV['PLUGIN'], $this->namespace, $file]);
 
         if (!file_exists($file)) throw new \Exception("File {$file} not found in plugin {$this->namespace}");
 
