@@ -47,19 +47,21 @@ class Plugin
         return $this->version;
     }
 
-    public function execute()
+    public static function load($package)
     {
-        if (!file_exists($this->path)) throw new \Exception("Plugin not found: {$this->namespace}");
+        $location = Tool::path([$_ENV['PLUGIN'], $package->namespace, $_ENV['INDEX']]);
 
-        require $this->path;
+        if (!file_exists($location)) throw new \Exception("Plugin not found: {$package->namespace}");
+
+        return $location;
     }
 
-    public function include($relativePath)
+    public function include($file)
     {
-        $filePath = Tool::path([$_ENV['PLUGIN'], $this->namespace, $relativePath]);
+        $file = Tool::path([$_ENV['PLUGIN'], $this->namespace, $file]);
 
-        if (!file_exists($filePath)) throw new \Exception("File {$relativePath} not found in plugin {$this->namespace}");
+        if (!file_exists($file)) throw new \Exception("File {$file} not found in plugin {$this->namespace}");
 
-        require $filePath;
+        require $file;
     }
 }
